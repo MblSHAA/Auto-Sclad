@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link
+      rel="shortcut icon"
+      href="./imges/1d399541812b8b07.png"
+      type="image/x-icon"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>GOV</title>
+  </head>
+  <body>
+    <div class="side-bar2">
+      <input type="checkbox" id="check" />
+      <label for="check">
+        <i class="fa-solid fa-bars" id="open"></i>
+        <i class="fa-solid fa-xmark" id="close"></i>
+      </label>
+      <div class="side-bar">
+        <a class="btn-frak-mini" href="./about-FIB.html"><h1>FIB</h1></a>
+
+        <a class="btn-frak-mini-main" href="./about-gov.html"><h1>GOV</h1></a>
+
+        <a class="btn-frak-mini" href="./about-LSPD.html"><h1>LSPD</h1></a>
+      </div>
+    </div>
+    <div class="content">
+      <div class="box-reg-all">
+        <div class="info-all">
+          <div class="info">
+            <p>Напиши тут свои данные</p>
+          </div>
+          <div>
+            <p class="info2">
+              Пример: <br />
+              MblSHA#3546 | Misha Karassco <br />
+              (Ник в дс | Ник в игре)
+            </p>
+          </div>
+        </div>
+        <div class="info-all-2">
+          <input
+            class="input-reg"
+            type="text"
+            placeholder="Введите данные"
+            id="name"
+          />
+          <button id="OK" class="btn-OK">Применить</button>
+        </div>
+      </div>
+      <div class="header">
+        <div class="all-variant">
+          <div class="variant">
+            <input
+              class="input-point"
+              type="radio"
+              id="contactChoice1"
+              name="contact"
+              checked
+              onchange="Two(1)"
+            />
+            <label class="txt-style" for="contactChoice1">Взял</label>
+          </div>
+          <div class="variant">
+            <input
+              class="input-point"
+              type="radio"
+              id="contactChoice2"
+              name="contact"
+              onchange="Two(2)"
+            />
+            <label for="contactChoice2">Сдал</label>
+          </div>
+        </div>
+      </div>
+      <div class="block">
+        <div class="mini-block">
+          <div class="input_name">
+            <lable>Асаут х</lable>
+            <input name="1" type="number" oninput="test()" />
+          </div>
+          <div class="input_name">
+            <lable>Карабин х</lable>
+            <input name="1" type="number" step="30" oninput="test()" />
+          </div>
+          <div class="input_name">
+            <lable>7.62 х</lable>
+            <input name="1" type="number" oninput="test()" />
+          </div>
+          <div class="input_name">
+            <lable>5.56</lable>
+            <input name="1" type="number" step="12" oninput="test()" />
+          </div>
+        </div>
+        <div class="mini-block">
+          <div class="input_name">
+            <lable>Аптечка х</lable>
+            <input name="1" type="number" oninput="test()" />
+          </div>
+          <div class="input_name">
+            <lable>Бинты х</lable>
+            <input name="1" type="number" oninput="test()" />
+          </div>
+          <div class="input_name">
+            <lable>Бронежилет х</lable>
+            <input name="1" type="number" oninput="test()" />
+          </div>
+          <div class="input_name">
+            <lable>Тазер х</lable>
+            <input name="1" type="number" oninput="test()" />
+          </div>
+        </div>
+      </div>
+      <fieldset class="itog" id="resoult">
+        <p class="copy">
+          1. @<span id="Name-game">MblSHA#3546 | Misha Karassco</span>
+        </p>
+        <p class="copy" id="Two">2.Взял/Крафт</p>
+        <p class="copy" id="Output">3.Что?</p>
+        <p class="copy" id="Time">4.Дата и время</p>
+      </fieldset>
+      <button onclick="myFunction()">Копировать</button>
+    </div>
+    <script src="./script/script.js"></script>
+    <script src="./script/script2.js"></script>
+  </body>
+</html>
