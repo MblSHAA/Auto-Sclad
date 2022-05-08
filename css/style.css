@@ -1,13 +1,21 @@
 @import url("https://fonts.googleapis.com/css2?family=Mulish:wght@200;300;700;900&display=swap");
 
+:root {
+  --main-color-txt: rgb(133, 133, 133);
+  --main-color-border: rgb(45, 45, 45);
+  --main-color-bg-1: rgb(31, 31, 31);
+  --main-color-bg-2: rgb(46, 46, 46);
+  --main-color-bg-3: ;
+}
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+  color: var(--main-color-txt);
 }
 body {
   font-size: 20px;
   font-weight: 900;
-  color: rgb(43, 0, 255);
   text-align: center;
   background-color: black;
   background-size: cover;
@@ -18,89 +26,122 @@ a {
   text-decoration: none;
 }
 .txt-style {
-  font-size: 35px;
+  font-size: 40px;
 }
 .content {
-  position: absolute;
-  right: 40px;
-  top: 0px;
-  height: 100vh;
+  height: 100%;
+  width: 100%;
 }
 .header {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 80px;
-  border: 3px solid rgb(43, 0, 255);
+  border: 3px solid var(--main-color-border);
   border-radius: 5px;
-  background-color: rgb(31, 31, 31);
+  background-color: var(--main-color-bg-1);
+}
+#check {
+  display: none;
 }
 .side-bar {
-  background-color: rgb(58, 38, 161);
+  z-index: 3;
+  position: fixed;
+  left: -380px;
+  background-color: rgba(31, 31, 31, 0.632);
+  border-right: 2px solid var(--main-color-border);
+  height: 100%;
   width: 380px;
-  height: 100vh;
-  width: 50vh;
+  transition: all 0.5s ease;
+  display: flex;
+  flex-direction: column;
+  align-content: space-around;
+}
+#open,
+#close {
+  z-index: 3;
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  font-size: 50px;
+  width: 70px;
+  height: 60px;
+  padding: 5px;
+  background-color: var(--main-color-bg-1);
+  border: 2px solid var(--main-color-border);
+  border-radius: 10px;
+  text-align: center;
+  transition: all 0.5s ease;
+  cursor: pointer;
+}
+#open {
+  opacity: 1;
+}
+#close {
+  opacity: 0;
+}
+#check:checked ~ label #open {
+  opacity: 0;
+  left: 26%;
+}
+#check:checked ~ label #close {
+  opacity: 1;
+  left: 26%;
+}
+
+#check:checked ~ .side-bar {
+  left: 0;
 }
 .box-frak-all {
   display: flex;
   justify-content: space-around;
   margin-top: 150px;
 }
-.box-frak-mini-all {
-  display: flex;
-  flex-direction: column;
-  align-content: space-around;
-}
+
 .btn-frak-mini {
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 3px solid rgb(43, 0, 255);
+  border: 3px solid var(--main-color-border);
   border-radius: 25px;
-  width: 45vh;
-  height: 15vh;
-  background-color: rgb(31, 31, 31);
-  font-size: 3vh;
+  width: 90%;
+  height: 110px;
+  background-color: var(--main-color-bg-1);
+  font-size: 25px;
   margin-top: 100px;
   margin-left: 10px;
-  color: rgb(43, 0, 255);
 }
 .btn-frak-mini-main {
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 3px solid rgb(32, 16, 115);
+  border: 3px solid var(--main-color-border);
   border-radius: 25px;
-  width: 45vh;
-  height: 15vh;
-  font-size: 3vh;
+  width: 90%;
+  height: 110px;
+  font-size: 25px;
   margin-top: 100px;
   margin-left: 10px;
-  background-color: rgb(39, 7, 69);
-  color: blueviolet;
+  background-color: var(--main-color-bg-2);
 }
 
 .btn-frak {
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 3px solid rgb(43, 0, 255);
+  border: 3px solid var(--main-color-border);
   border-radius: 5px;
   width: 400px;
   height: 150px;
-  background-color: rgb(31, 31, 31);
+  background-color: var(--main-color-bg-1);
   font-size: 40px;
 }
-
-.box-frak-all > a > h1 {
-  color: rgb(43, 0, 255);
-}
 .header {
-  background-color: rgb(31, 31, 31);
+  background-color: var(--main-color-bg-1);
   border-radius: 20px;
-  border: 3px solid rgb(43, 0, 255);
+  border: 3px solid var(--main-color-border);
   font-size: 30px;
-  width: 140vh;
+  width: 100%;
   height: 80px;
   display: flex;
   flex-direction: column;
@@ -108,42 +149,42 @@ a {
 }
 .all-variant {
   height: 60px;
-  width: 140vh;
+  width: 100%;
   display: flex;
   justify-content: space-around;
   margin-bottom: 10px;
   margin-top: 10px;
 }
 .variant {
+  width: 200px;
   cursor: pointer;
+  text-align: center;
   font-size: 40px;
-  color: blueviolet;
-  border: 2px solid rgba(0, 0, 255, 0.434);
+  border: 2px solid var(--main-color-border);
   border-radius: 10px;
-  background-color: rgba(15, 15, 159, 0.574);
+  background-color: var(--main-color-bg-1);
 }
 .variant,
 label {
   cursor: pointer;
 }
 .variant:hover {
-  background-color: rgb(59, 59, 124);
-  color: rgb(0, 0, 255);
+  background-color: rgb(44, 44, 44);
 }
 .variant:active {
-  background-color: blue;
-  color: rgb(1, 1, 39);
+  background-color: rgb(28, 28, 28);
 }
 .itog {
   background-color: rgb(31, 31, 31);
   border-radius: 20px;
-  border: 3px solid rgb(43, 0, 255);
+  border: 3px solid var(--main-color-border);
   font-size: 30px;
-  width: 140vh;
+  width: 100%;
   margin: 0 auto;
 }
 input {
-  color: blue;
+  color: rgb(0, 0, 0);
+  padding-left: 10px;
   height: 25px;
   border-radius: 8px;
   outline: none;
@@ -157,7 +198,7 @@ input {
 }
 .block {
   margin: 0 auto;
-  width: 140vh;
+  width: 100%;
   height: 230px;
   display: flex;
   flex-direction: row;
@@ -186,7 +227,7 @@ input {
   margin: 0 auto;
   margin-bottom: 0px;
   width: 600px;
-  border: 2px solid blue;
+  border: 2px solid var(--main-color-border);
 }
 .input-name {
   width: 350px;
@@ -197,88 +238,85 @@ input {
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 3px solid rgb(43, 0, 255);
+  border: 3px solid var(--main-color-border);
   border-radius: 5px;
   width: 150px;
   height: 50px;
-  background-color: rgb(31, 31, 31);
+  background-color: var(--main-color-bg-1);
   font-size: 25px;
   margin-left: 10px;
   position: relative;
   bottom: 10px;
 }
 button {
-  width: 40vh;
-  height: 8vh;
-  font-size: 4vh;
-  color: rgb(43, 0, 255);
+  width: 250px;
+  height: 70px;
+  font-size: 38px;
   font-family: Impact;
   cursor: pointer;
   border-radius: 100px;
-  border: 3px solid blue;
-  background-color: rgb(31, 31, 31);
+  border: 3px solid var(--main-color-border);
+  background-color: var(--main-color-bg-1);
   margin-top: 8px;
 }
 button:hover {
-  background-color: rgb(59, 59, 124);
-  color: rgb(0, 0, 255);
+  background-color: rgb(44, 44, 44);
 }
 button:active {
-  background-color: blue;
-  color: rgb(1, 1, 39);
+  background-color: rgb(28, 28, 28);
+}
+.info-all {
+  display: flex;
+  flex-direction: column;
+  margin-left: 150px;
+}
+.info-all-2 {
+  display: flex;
+  flex-direction: column;
+  margin-right: 150px;
 }
 .info {
-  width: 500px;
+  width: 600px;
   height: 20px;
   font-size: 37px;
-  grid-column-start: 1;
-  grid-row-start: 1;
   padding-left: 50px;
 }
 .info2 {
+  margin-top: 30px;
   padding-left: 50px;
-  width: 500px;
+  width: 600px;
   height: 30px;
   font-size: 30px;
-  grid-column-start: 1;
-  grid-row-start: 1;
 }
 
 .box-reg-all {
   display: flex;
-  justify-content: center;
-  display: grid;
-  grid-template-columns: 570px 570px;
-  grid-template-rows: 30% 70%;
-  border: 3px solid blue;
+  justify-content: space-between;
+  border: 3px solid var(--main-color-border);
   border-radius: 10px;
-  background-color: rgb(31, 31, 31);
-  width: 140vh;
-  height: 180px;
+  background-color: var(--main-color-bg-1);
+  width: 100%;
+  height: 195px;
   position: relative;
   top: 1px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 .input-reg {
   margin-top: 20px;
+  margin-bottom: 20px;
   font-size: 30px;
   font-weight: 600;
   width: 500px;
   height: 60px;
-  grid-column-start: 2;
-  grid-row-start: 1;
 }
 .btn-OK {
   width: 250px;
   height: 70px;
   font-size: 35px;
-  color: rgb(43, 0, 255);
   font-family: Impact;
   border-radius: 100px;
-  border: 3px solid rgb(43, 0, 255);
-  background-color: rgb(31, 31, 31);
-  grid-column-start: 2;
-  grid-row-start: 2;
+  border: 3px solid var(--main-color-border);
+  background-color: var(--main-color-bg-1);
   margin: 0 auto;
   align-self: end;
   margin-bottom: 10px;

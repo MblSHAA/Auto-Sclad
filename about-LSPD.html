@@ -10,11 +10,23 @@
       href="./imges/1d399541812b8b07.png"
       type="image/x-icon"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <title>LSPD</title>
   </head>
   <body>
-    <div class="side-bar">
-      <div class="box-frak-mini-all">
+    <div class="side-bar2">
+      <input type="checkbox" id="check" />
+      <label for="check">
+        <i class="fa-solid fa-bars" id="open"></i>
+        <i class="fa-solid fa-xmark" id="close"></i>
+      </label>
+      <div class="side-bar">
         <a class="btn-frak-mini" href="./about-FIB.html"><h1>FIB</h1></a>
 
         <a class="btn-frak-mini" href="./about-gov.html"><h1>GOV</h1></a>
@@ -24,23 +36,27 @@
     </div>
     <div class="content">
       <div class="box-reg-all">
-        <div class="info">
-          <p>Напиши тут свои данные</p>
+        <div class="info-all">
+          <div class="info">
+            <p>Напиши тут свои данные</p>
+          </div>
+          <div>
+            <p class="info2">
+              Пример: <br />
+              MblSHA#3546 | Misha Karassco <br />
+              (Ник в дс | Ник в игре)
+            </p>
+          </div>
         </div>
-        <div>
-          <p class="info2">
-            Пример: <br />
-            MblSHA#3546 | Misha Karassco <br />
-            (Ник в дс | Ник в игре)
-          </p>
+        <div class="info-all-2">
+          <input
+            class="input-reg"
+            type="text"
+            placeholder="Введите данные"
+            id="name"
+          />
+          <button id="OK" class="btn-OK">Применить</button>
         </div>
-        <input
-          class="input-reg"
-          type="text"
-          placeholder="Введите данные"
-          id="name"
-        />
-        <button id="OK" class="btn-OK">Применить</button>
       </div>
       <div class="header">
         <div class="all-variant">
@@ -53,7 +69,7 @@
               checked
               onchange="Two(1)"
             />
-            <label class="txt-style" for="contactChoice1">Взял/Крафт</label>
+            <label class="txt-style" for="contactChoice1">Взял</label>
           </div>
           <div class="variant">
             <input
